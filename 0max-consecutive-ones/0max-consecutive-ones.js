@@ -2,7 +2,6 @@
  * @param {number[]} nums
  * @return {number}
  */
-nums=[1,1,0,1,1,1]
 var findMaxConsecutiveOnes = function(nums) {
     let [ans,cnt]=[0,0];
     for(const x of nums){
