@@ -4,20 +4,18 @@
  */
 
 //[-4,-1,0,3,10]
-let makeSquares = (num) => {
-    num = num*num;
-    return num;
-    
-}
-
 var sortedSquares = function(nums) {
-    let SqNum=0;
-    let arr =[];
-    for (num of nums){
-        SqNum = makeSquares(num);
-        arr.push(SqNum);
+    const n = nums.length;
+    const ans = Array(n).fill(0);
+    for(let i = 0, j = n - 1, k = n -1; i <= j; --k ){ //i=2, j=2, k=0
+        const [a,b] = [nums[i] * nums[i], nums[j] * nums[j]]; //16,100 / 16,9 / 1,9 / 1,0
+        if (a > b) {
+            ans[k] = a;
+            ++i;
+        }else {
+            ans[k] = b;
+            --j;
+        }
     }
-    arr.sort((a, b) => a - b);
-     console.log(arr);
-    return arr;
+    return ans; //[0,1,9,16,100]
 };
