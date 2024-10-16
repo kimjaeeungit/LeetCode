@@ -4,8 +4,6 @@
  */
 
 //[-4,-1,0,3,10]
-// 1. 함수 안에서 제곱하기
-// 
 let makeSquares = (num) => {
     num = num*num;
     return num;
